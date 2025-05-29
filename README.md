@@ -4,127 +4,126 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Montclairessence</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
-      background-color: #f8f7f4;
-      color: #222;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      color: #111;
     }
+
     header {
-      background-color: #111;
-      color: white;
-      padding: 20px;
-      text-align: center;
+      background-color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
     }
-    h1 {
-      margin: 0;
-      font-size: 2.5em;
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 600;
       letter-spacing: 2px;
     }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 30px;
-    }
-    .product {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      margin-bottom: 40px;
-      display: flex;
-      flex-wrap: wrap;
-      overflow: hidden;
-    }
-    .product img {
-      width: 100%;
-      max-width: 400px;
-      object-fit: cover;
-      flex: 1 1 40%;
-    }
-    .product-info {
-      padding: 20px;
-      flex: 1 1 60%;
-    }
-    .product-info h2 {
-      margin-top: 0;
-    }
-    .buttons {
-      margin-top: 20px;
-    }
-    .buttons a {
+
+    nav a {
       text-decoration: none;
-      margin-right: 15px;
-      padding: 10px 20px;
-      border-radius: 10px;
-      background-color: #111;
-      color: white;
-      transition: 0.3s;
+      color: #111;
+      margin-left: 20px;
+      font-weight: 500;
     }
-    .buttons a:hover {
-      background-color: #444;
-    }
-    footer {
-      background-color: #111;
-      color: white;
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1607083208528-6c5c1b8efc1f');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 20px;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: #111;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: white;
+      font-size: 14px;
+      color: #777;
+      border-top: 1px solid #ddd;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Montclairessence</h1>
-    <p>Perfumería de lujo con esencia única</p>
+    <div class="logo">Montclairessence</div>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Perfumes</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Contacto</a>
+    </nav>
   </header>
 
-  <div class="container" id="product-list">
-    <!-- Los productos se cargarán aquí -->
-  </div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>La esencia del lujo</h1>
+      <p>Descubre fragancias que definen tu elegancia</p>
+      <a href="#perfumes" class="btn">Explorar colección</a>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2025 Montclairessence. Todos los derechos reservados.
+    © 2025 Montclairessence · Todos los derechos reservados
   </footer>
 
-  <script>
-    const products = [
-      {
-        name: "Elixir Suprême",
-        description: "Un aroma profundo, sensual y elegante.",
-        image: "https://via.placeholder.com/400x500?text=Elixir+Suprême",
-        paypalLink: "https://www.paypal.me/tuusuario/1000",
-        mercadoPagoLink: "https://www.mercadopago.com.mx/link1",
-        oxxoLink: "https://oxxo.com/pago1"
-      },
-      {
-        name: "Nuit Dorée",
-        description: "Notas doradas que brillan como el oro en la noche.",
-        image: "https://via.placeholder.com/400x500?text=Nuit+Dorée",
-        paypalLink: "https://www.paypal.me/tuusuario/1200",
-        mercadoPagoLink: "https://www.mercadopago.com.mx/link2",
-        oxxoLink: "https://oxxo.com/pago2"
-      }
-    ];
-
-    const container = document.getElementById('product-list');
-
-    products.forEach(product => {
-      container.innerHTML += `
-        <div class="product">
-          <img src="${product.image}" alt="${product.name}">
-          <div class="product-info">
-            <h2>${product.name}</h2>
-            <p>${product.description}</p>
-            <div class="buttons">
-              <a href="${product.paypalLink}" target="_blank">PayPal</a>
-              <a href="${product.mercadoPagoLink}" target="_blank">MercadoPago</a>
-              <a href="${product.oxxoLink}" target="_blank">OXXO</a>
-            </div>
-          </div>
-        </div>
-      `;
-    });
-  </script>
 </body>
 </html>
